@@ -1,0 +1,4 @@
+account_number,transaction_type,amount,timestamp
+
+1003,DEPOSIT,2000,2025-04-10 23:38:00
+1003,DEPOSIT,800,2025-04-10 23:45:45
