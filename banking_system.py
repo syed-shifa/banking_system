@@ -8,16 +8,16 @@ TRANSACTION_FILE = "transaction.txt"
 # Function to generate a unique account number
 def generate_account_number():
     if not os.path.exists(ACCOUNT_FILE) or os.stat(ACCOUNT_FILE).st_size == 0:
-        return 1001  # Start account numbers from 1001
+        return 1001 
     with open(ACCOUNT_FILE, "r") as file:
         lines = file.readlines()
-        # Iterate through lines in reverse to find the last valid account number
+       
         for line in reversed(lines):
             parts = line.strip().split(",")
-            if len(parts) >= 1 and parts[0].isdigit():  # Ensure the first part is a valid number
+            if len(parts) >= 1 and parts[0].isdigit():  
                 last_account_number = int(parts[0])
                 return last_account_number + 1
-    return 1001  # Default if no valid account entries are found
+    return 1001  
 
 # Function to create a new account
 def create_account():
@@ -46,7 +46,7 @@ def create_account():
     # Generate a unique account number
     account_number = generate_account_number()
 
-    # Get initial deposit
+    # initial deposit
     while True:
         initial_deposit = input("Enter your initial deposit: ")
         if initial_deposit.isdigit() and int(initial_deposit) >= 0:
