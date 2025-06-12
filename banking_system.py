@@ -156,27 +156,6 @@ def user_menu(account_number):
         else:
             print("Invalid choice. Please try again.")
 
-# Main
-def main():
-    while True:
-        print("\n=== Banking System ===")
-        print("1. Create Account")
-        print("2. Login")
-        print("3. Exit")
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            create_account()
-        elif choice == "2":
-            account_number = login()
-            if account_number:
-                user_menu(account_number)
-        elif choice == "3":
-            print("Exiting the system. Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
-
 if __name__ == "__main__":
 
     if not os.path.exists(ACCOUNT_FILE) or os.stat(ACCOUNT_FILE).st_size == 0:
